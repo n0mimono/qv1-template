@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="41U-nH-QwH">
+            <objects>
+                <viewController storyboardIdentifier="HomeView" id="dbd-33-9or" customClass="HomeViewController" customModule="v0" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8F7-k2-idq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YaD-uP-tzm">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDf-aD-Pag">
+                                <rect key="frame" x="0.0" y="44" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bMF-CN-aTe"/>
+                                    <constraint firstAttribute="width" constant="100" id="uud-cg-6Op"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5B1-wV-LVa">
+                                <rect key="frame" x="100" y="58.5" width="314" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TpM-gp-9nr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5B1-wV-LVa" firstAttribute="centerY" secondItem="UDf-aD-Pag" secondAttribute="centerY" id="1Uu-eh-Mbr"/>
+                            <constraint firstItem="5B1-wV-LVa" firstAttribute="leading" secondItem="UDf-aD-Pag" secondAttribute="trailing" id="6U3-O5-uuy"/>
+                            <constraint firstItem="TpM-gp-9nr" firstAttribute="bottom" secondItem="YaD-uP-tzm" secondAttribute="bottom" id="B9z-w2-447"/>
+                            <constraint firstItem="UDf-aD-Pag" firstAttribute="leading" secondItem="TpM-gp-9nr" secondAttribute="leading" id="C84-Uo-dTy"/>
+                            <constraint firstItem="YaD-uP-tzm" firstAttribute="top" secondItem="UDf-aD-Pag" secondAttribute="bottom" id="D5C-eX-wVD"/>
+                            <constraint firstItem="TpM-gp-9nr" firstAttribute="trailing" secondItem="YaD-uP-tzm" secondAttribute="trailing" id="D87-7z-3gw"/>
+                            <constraint firstItem="TpM-gp-9nr" firstAttribute="trailing" secondItem="5B1-wV-LVa" secondAttribute="trailing" id="Vfj-2g-Ajy"/>
+                            <constraint firstItem="YaD-uP-tzm" firstAttribute="leading" secondItem="TpM-gp-9nr" secondAttribute="leading" id="kYW-EY-P5A"/>
+                            <constraint firstItem="UDf-aD-Pag" firstAttribute="top" secondItem="TpM-gp-9nr" secondAttribute="top" id="mkB-MR-1Et"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="YaD-uP-tzm" id="RGL-xM-M0y"/>
+                        <outlet property="topButton" destination="UDf-aD-Pag" id="YGG-yB-Fvw"/>
+                        <outlet property="topLabel" destination="5B1-wV-LVa" id="6zn-Rq-d9W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dGN-62-lxs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2723.1884057971015" y="34.821428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
