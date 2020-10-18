@@ -9,25 +9,24 @@ import Foundation
 import ReactorKit
 import RxRelay
 
-final class MainViewReactor: Reactor {
+final class HomeViewReactor: Reactor {
     enum Action {
         case fetchArticles
+        case fetchArticlesAdditive
         case selectItem(Int)
-        case updateTextValue(String)
     }
 
     enum Mutation {
+        case setArticles([Article])
         case addArticles([Article])
         case setLoading(Bool)
         case selectItem(Article?)
-        case updateTextValue(String)
     }
 
     struct State {
         var articles: [Article]
         var isLoading: Bool
         var page: Int
-        var textValue: String
     }
 
     let initialState: State
@@ -46,14 +45,24 @@ final class MainViewReactor: Reactor {
         initialState = State(
             articles: [],
             isLoading: false,
-            page: 1,
-            textValue: "000"
+            page: 1
         )
+        _ = state
     }
 
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .fetchArticles:
+            guard !currentState.isLoading else {
+                return Observable.empty()
+            }
+            return Observable.concat([
+                Observable.just(Mutation.setLoading(true)),
+                service.api.request(ItemRequest(page: initialState.page), ItemsResponse.self)
+                    .compactMap { Mutation.setArticles($0.articles) },
+                Observable.just(Mutation.setLoading(false))
+            ])
+        case .fetchArticlesAdditive:
             guard !currentState.isLoading else {
                 return Observable.empty()
             }
@@ -66,14 +75,15 @@ final class MainViewReactor: Reactor {
         case let .selectItem(index):
             let article = currentState.articles[index]
             return Observable.just(Mutation.selectItem(article))
-        case let .updateTextValue(text):
-            return Observable.just(Mutation.updateTextValue(text))
         }
     }
 
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
         switch mutation {
+        case let .setArticles(articles):
+            state.articles = articles
+            state.page = initialState.page + 1
         case let .addArticles(articles):
             state.articles += articles
             state.page += 1
@@ -81,8 +91,6 @@ final class MainViewReactor: Reactor {
             state.isLoading = isLoading
         case let .selectItem(article):
             relay.selectItem.accept(article)
-        case let .updateTextValue(text):
-            state.textValue = text
         }
         return state
     }

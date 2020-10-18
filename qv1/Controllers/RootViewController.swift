@@ -14,7 +14,7 @@ class RootViewController: UIViewController {
         let service = ServiceProvider()
 
         move(name: "HomeView", identifier: "HomeView", type: HomeViewController.self, parent: self) { [self] next in
-            next.reactor = MainViewReactor(service: service)
+            next.reactor = HomeViewReactor(service: service)
             self.current = next
         }
     }

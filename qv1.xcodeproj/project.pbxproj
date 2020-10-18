@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9545BED62545B05400D2E64C /* AutoScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545BED52545B05400D2E64C /* AutoScroller.swift */; };
 		95B2F339252C6B610047D2FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2F338252C6B610047D2FC /* AppDelegate.swift */; };
 		95B2F33B252C6B610047D2FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2F33A252C6B610047D2FC /* SceneDelegate.swift */; };
 		95B2F342252C6B620047D2FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B2F341252C6B620047D2FC /* Assets.xcassets */; };
@@ -29,7 +30,7 @@
 		95ED4C092533278800B11697 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4C022533278700B11697 /* HomeViewController.swift */; };
 		95ED4C0A2533278800B11697 /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95ED4C032533278700B11697 /* HomeView.storyboard */; };
 		95ED4C0B2533278800B11697 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4C042533278700B11697 /* TableViewCell.swift */; };
-		95ED4C102533279000B11697 /* MainViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4C0F2533279000B11697 /* MainViewReactor.swift */; };
+		95ED4C102533279000B11697 /* HomeViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4C0F2533279000B11697 /* HomeViewReactor.swift */; };
 		95ED4C162533279800B11697 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4C142533279800B11697 /* ServiceProvider.swift */; };
 		95ED4C172533279800B11697 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95ED4C152533279800B11697 /* ApiService.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9545BED52545B05400D2E64C /* AutoScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScroller.swift; sourceTree = "<group>"; };
 		95B2F335252C6B610047D2FC /* qv1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qv1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B2F338252C6B610047D2FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95B2F33A252C6B610047D2FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		95ED4C022533278700B11697 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		95ED4C032533278700B11697 /* HomeView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
 		95ED4C042533278700B11697 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		95ED4C0F2533279000B11697 /* MainViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewReactor.swift; sourceTree = "<group>"; };
+		95ED4C0F2533279000B11697 /* HomeViewReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewReactor.swift; sourceTree = "<group>"; };
 		95ED4C142533279800B11697 /* ServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
 		95ED4C152533279800B11697 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				95ED4BFF2533278700B11697 /* TableViewCell.xib */,
 				95ED4C042533278700B11697 /* TableViewCell.swift */,
 				95ED4C012533278700B11697 /* RootViewController.swift */,
+				9545BED52545B05400D2E64C /* AutoScroller.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -181,7 +184,7 @@
 		95E51E56252C72A30046D7A8 /* Reactors */ = {
 			isa = PBXGroup;
 			children = (
-				95ED4C0F2533279000B11697 /* MainViewReactor.swift */,
+				95ED4C0F2533279000B11697 /* HomeViewReactor.swift */,
 			);
 			name = Reactors;
 			path = qv1/Reactors;
@@ -377,10 +380,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95ED4C102533279000B11697 /* MainViewReactor.swift in Sources */,
+				95ED4C102533279000B11697 /* HomeViewReactor.swift in Sources */,
 				95ED4C082533278800B11697 /* RootViewController.swift in Sources */,
 				95B2F339252C6B610047D2FC /* AppDelegate.swift in Sources */,
 				95ED4C162533279800B11697 /* ServiceProvider.swift in Sources */,
+				9545BED62545B05400D2E64C /* AutoScroller.swift in Sources */,
 				95ED4BFA2533277D00B11697 /* Items.swift in Sources */,
 				95ED4C052533278800B11697 /* ArticleDetailViewController.swift in Sources */,
 				95ED4C172533279800B11697 /* ApiService.swift in Sources */,

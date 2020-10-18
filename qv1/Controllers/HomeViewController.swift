@@ -12,22 +12,41 @@ import RxCocoa
 import RxSwift
 
 final class HomeViewController: UIViewController, StoryboardView {
-    typealias Reactor = MainViewReactor
+    typealias Reactor = HomeViewReactor
     var disposeBag = DisposeBag()
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var topButton: UIButton!
-    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
 
-    func bind(reactor: Reactor) {
+        navigationController?.navigationBar.topItem?.title = "Home"
+
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
 
+        let originHeaderHeight = headerHeightConstraint.constant
+        tableView.rx.contentOffset.asDriver()
+            .distinctUntilChanged()
+            .map { max(0, -$0.y) }
+            .drive(onNext: { [weak self] offset in
+                self?.headerHeightConstraint.constant = originHeaderHeight + offset
+
+                if offset > 200 {
+                    self?.headerView.backgroundColor = UIColor(ciColor: .red)
+                } else if offset > 100 {
+                    self?.headerView.backgroundColor = UIColor(ciColor: .green)
+                } else {
+                    self?.headerView.backgroundColor = UIColor(ciColor: .white)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+
+    func bind(reactor: Reactor) {
         reactor.state.map { $0.articles }
             .observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: "TableViewCell", cellType: TableViewCell.self)) { _, item, cell in
@@ -37,8 +56,8 @@ final class HomeViewController: UIViewController, StoryboardView {
 
         reactor.relay.selectItem
             .observeOn(MainScheduler.instance)
-            .bind { [unowned self] article in
-                push(name: "ArticleDetail", type: ArticleDetailViewController.self) { next in
+            .bind { [weak self] article in
+                self?.push(name: "ArticleDetail", type: ArticleDetailViewController.self) { next in
                     next.article = article
                 }
             }
@@ -56,16 +75,8 @@ final class HomeViewController: UIViewController, StoryboardView {
                 return Int(tableViewMaximumOffset - $0.y)
             }
             .filter { $0 < 500 }
-            .map { _ in Reactor.Action.fetchArticles }
+            .map { _ in Reactor.Action.fetchArticlesAdditive }
             .drive(reactor.action)
-            .disposed(by: disposeBag)
-
-        reactor.state.map { $0.textValue }
-            .bind(to: topLabel.rx.text)
-            .disposed(by: disposeBag)
-        topButton.rx.tap
-            .map { _ in Reactor.Action.updateTextValue("555") }
-            .bind(to: reactor.action)
             .disposed(by: disposeBag)
 
         Observable.just(Reactor.Action.fetchArticles)

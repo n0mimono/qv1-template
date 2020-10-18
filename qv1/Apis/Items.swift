@@ -19,9 +19,9 @@ struct ItemRequest: ApiRequest {
 
 struct ItemsResponse: ApiResponse {
     typealias ResponseEntity = [Article]
-    
+
     let articles: ResponseEntity
-    
+
     init(_ responseEntity: ResponseEntity?) {
         articles = responseEntity ?? []
     }
