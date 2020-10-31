@@ -5,27 +5,7 @@
 //  Created by Ryota Yokote on 2020/10/03.
 //
 
-import Alamofire
 import Foundation
-
-struct ItemRequest: ApiRequest {
-    let uri: String = "https://qiita.com/api/v2/items"
-    let parameters: Parameters
-
-    init(page: Int) {
-        parameters = ["page": page, "per_page": 20]
-    }
-}
-
-struct ItemsResponse: ApiResponse {
-    typealias ResponseEntity = [Article]
-
-    let articles: ResponseEntity
-
-    init(_ responseEntity: ResponseEntity?) {
-        articles = responseEntity ?? []
-    }
-}
 
 struct Article: Codable {
     let title: String

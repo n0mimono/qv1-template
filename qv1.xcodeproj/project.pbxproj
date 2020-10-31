@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		9545BED62545B05400D2E64C /* AutoScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545BED52545B05400D2E64C /* AutoScroller.swift */; };
+		9545BF35254D5CCD00D2E64C /* HomeFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545BF34254D5CCD00D2E64C /* HomeFirstViewController.swift */; };
+		9545BF3A254D5CDF00D2E64C /* HomeSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545BF39254D5CDF00D2E64C /* HomeSecondViewController.swift */; };
+		9545BF45254D82BC00D2E64C /* HomeThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545BF44254D82BC00D2E64C /* HomeThirdViewController.swift */; };
+		9545BF60254D86AE00D2E64C /* HomeSecondDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545BF5F254D86AE00D2E64C /* HomeSecondDetailViewController.swift */; };
+		9545BF73254E412A00D2E64C /* HomeSecondDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9545BF72254E412A00D2E64C /* HomeSecondDetailView.storyboard */; };
+		9545BF78254E414B00D2E64C /* HomeSecondDetailPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9545BF77254E414B00D2E64C /* HomeSecondDetailPresentationController.swift */; };
+		9545BF84254E499800D2E64C /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = 9545BF83254E499800D2E64C /* RxGesture */; };
+		95491091254E9368001DA4C0 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 95491090254E9368001DA4C0 /* ReactiveMoya */; };
+		95491093254E9368001DA4C0 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 95491092254E9368001DA4C0 /* CombineMoya */; };
+		95491095254E9368001DA4C0 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 95491094254E9368001DA4C0 /* RxMoya */; };
+		95491097254E9368001DA4C0 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 95491096254E9368001DA4C0 /* Moya */; };
+		9549109C254EA40D001DA4C0 /* QiitaApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9549109B254EA40D001DA4C0 /* QiitaApi.swift */; };
 		95B2F339252C6B610047D2FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2F338252C6B610047D2FC /* AppDelegate.swift */; };
 		95B2F33B252C6B610047D2FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B2F33A252C6B610047D2FC /* SceneDelegate.swift */; };
 		95B2F342252C6B620047D2FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95B2F341252C6B620047D2FC /* Assets.xcassets */; };
@@ -54,6 +66,13 @@
 
 /* Begin PBXFileReference section */
 		9545BED52545B05400D2E64C /* AutoScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScroller.swift; sourceTree = "<group>"; };
+		9545BF34254D5CCD00D2E64C /* HomeFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFirstViewController.swift; sourceTree = "<group>"; };
+		9545BF39254D5CDF00D2E64C /* HomeSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSecondViewController.swift; sourceTree = "<group>"; };
+		9545BF44254D82BC00D2E64C /* HomeThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThirdViewController.swift; sourceTree = "<group>"; };
+		9545BF5F254D86AE00D2E64C /* HomeSecondDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSecondDetailViewController.swift; sourceTree = "<group>"; };
+		9545BF72254E412A00D2E64C /* HomeSecondDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeSecondDetailView.storyboard; sourceTree = "<group>"; };
+		9545BF77254E414B00D2E64C /* HomeSecondDetailPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSecondDetailPresentationController.swift; sourceTree = "<group>"; };
+		9549109B254EA40D001DA4C0 /* QiitaApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaApi.swift; sourceTree = "<group>"; };
 		95B2F335252C6B610047D2FC /* qv1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qv1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95B2F338252C6B610047D2FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95B2F33A252C6B610047D2FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,12 +103,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95491095254E9368001DA4C0 /* RxMoya in Frameworks */,
 				95B2F379252C6CEB0047D2FC /* RxSwift in Frameworks */,
 				95B2F36D252C6C570047D2FC /* SDWebImage in Frameworks */,
+				95491093254E9368001DA4C0 /* CombineMoya in Frameworks */,
 				95B2F37F252C6CEB0047D2FC /* RxCocoa in Frameworks */,
+				95491097254E9368001DA4C0 /* Moya in Frameworks */,
 				95B2F37D252C6CEB0047D2FC /* RxRelay in Frameworks */,
 				95ED4BEC2533263000B11697 /* ReactorKit in Frameworks */,
+				95491091254E9368001DA4C0 /* ReactiveMoya in Frameworks */,
 				95B2F373252C6CA30047D2FC /* Alamofire in Frameworks */,
+				9545BF84254E499800D2E64C /* RxGesture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +197,12 @@
 				95ED4BFE2533278700B11697 /* ArticleDetailViewController.swift */,
 				95ED4C032533278700B11697 /* HomeView.storyboard */,
 				95ED4C022533278700B11697 /* HomeViewController.swift */,
+				9545BF34254D5CCD00D2E64C /* HomeFirstViewController.swift */,
+				9545BF39254D5CDF00D2E64C /* HomeSecondViewController.swift */,
+				9545BF44254D82BC00D2E64C /* HomeThirdViewController.swift */,
+				9545BF72254E412A00D2E64C /* HomeSecondDetailView.storyboard */,
+				9545BF5F254D86AE00D2E64C /* HomeSecondDetailViewController.swift */,
+				9545BF77254E414B00D2E64C /* HomeSecondDetailPresentationController.swift */,
 				95ED4BFF2533278700B11697 /* TableViewCell.xib */,
 				95ED4C042533278700B11697 /* TableViewCell.swift */,
 				95ED4C012533278700B11697 /* RootViewController.swift */,
@@ -202,6 +232,7 @@
 		95E51E58252C73150046D7A8 /* Apis */ = {
 			isa = PBXGroup;
 			children = (
+				9549109B254EA40D001DA4C0 /* QiitaApi.swift */,
 				95ED4BF92533277D00B11697 /* Items.swift */,
 			);
 			path = Apis;
@@ -231,6 +262,11 @@
 				95B2F37C252C6CEB0047D2FC /* RxRelay */,
 				95B2F37E252C6CEB0047D2FC /* RxCocoa */,
 				95ED4BEB2533263000B11697 /* ReactorKit */,
+				9545BF83254E499800D2E64C /* RxGesture */,
+				95491090254E9368001DA4C0 /* ReactiveMoya */,
+				95491092254E9368001DA4C0 /* CombineMoya */,
+				95491094254E9368001DA4C0 /* RxMoya */,
+				95491096254E9368001DA4C0 /* Moya */,
 			);
 			productName = qv1;
 			productReference = 95B2F335252C6B610047D2FC /* qv1.app */;
@@ -312,6 +348,8 @@
 				95B2F371252C6CA30047D2FC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				95B2F377252C6CEB0047D2FC /* XCRemoteSwiftPackageReference "RxSwift" */,
 				95ED4BEA2533263000B11697 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				9545BF82254E499800D2E64C /* XCRemoteSwiftPackageReference "RxGesture" */,
+				9549108F254E9368001DA4C0 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 95B2F336252C6B610047D2FC /* Products */;
 			projectDirPath = "";
@@ -330,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95ED4C0A2533278800B11697 /* HomeView.storyboard in Resources */,
+				9545BF73254E412A00D2E64C /* HomeSecondDetailView.storyboard in Resources */,
 				95B2F345252C6B620047D2FC /* LaunchScreen.storyboard in Resources */,
 				95ED4C062533278800B11697 /* TableViewCell.xib in Resources */,
 				95ED4C072533278800B11697 /* ArticleDetail.storyboard in Resources */,
@@ -383,14 +422,20 @@
 				95ED4C102533279000B11697 /* HomeViewReactor.swift in Sources */,
 				95ED4C082533278800B11697 /* RootViewController.swift in Sources */,
 				95B2F339252C6B610047D2FC /* AppDelegate.swift in Sources */,
+				9545BF45254D82BC00D2E64C /* HomeThirdViewController.swift in Sources */,
 				95ED4C162533279800B11697 /* ServiceProvider.swift in Sources */,
+				9545BF35254D5CCD00D2E64C /* HomeFirstViewController.swift in Sources */,
 				9545BED62545B05400D2E64C /* AutoScroller.swift in Sources */,
 				95ED4BFA2533277D00B11697 /* Items.swift in Sources */,
 				95ED4C052533278800B11697 /* ArticleDetailViewController.swift in Sources */,
+				9545BF60254D86AE00D2E64C /* HomeSecondDetailViewController.swift in Sources */,
+				9549109C254EA40D001DA4C0 /* QiitaApi.swift in Sources */,
 				95ED4C172533279800B11697 /* ApiService.swift in Sources */,
+				9545BF3A254D5CDF00D2E64C /* HomeSecondViewController.swift in Sources */,
 				95B2F33B252C6B610047D2FC /* SceneDelegate.swift in Sources */,
 				95ED4C0B2533278800B11697 /* TableViewCell.swift in Sources */,
 				95ED4C092533278800B11697 /* HomeViewController.swift in Sources */,
+				9545BF78254E414B00D2E64C /* HomeSecondDetailPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,6 +764,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9545BF82254E499800D2E64C /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.3;
+			};
+		};
+		9549108F254E9368001DA4C0 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = revision;
+				revision = e5a28fb62dd5ff4e17b7025643366550044a40b0;
+			};
+		};
 		95B2F36B252C6C570047D2FC /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -754,6 +815,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9545BF83254E499800D2E64C /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9545BF82254E499800D2E64C /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
+		};
+		95491090254E9368001DA4C0 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9549108F254E9368001DA4C0 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		95491092254E9368001DA4C0 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9549108F254E9368001DA4C0 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		95491094254E9368001DA4C0 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9549108F254E9368001DA4C0 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		95491096254E9368001DA4C0 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9549108F254E9368001DA4C0 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
 		95B2F36C252C6C570047D2FC /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 95B2F36B252C6C570047D2FC /* XCRemoteSwiftPackageReference "SDWebImage" */;

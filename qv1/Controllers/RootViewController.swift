@@ -41,4 +41,13 @@ extension UIViewController {
         did?(next)
         navigationController?.pushViewController(next, animated: true)
     }
+
+    func present<T: UIViewController>(name: String, type: T.Type, did: ((T) -> Void)?) {
+        guard let next = UIStoryboard(name: name, bundle: nil)
+            .instantiateInitialViewController()
+            as? T else { return }
+
+        did?(next)
+        present(next, animated: true)
+    }
 }

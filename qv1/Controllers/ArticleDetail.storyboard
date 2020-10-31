@@ -11,7 +11,7 @@
         <!--Article Detail View Controller-->
         <scene sceneID="9Fl-Hq-Ps4">
             <objects>
-                <viewController id="jj0-Pj-JR3" customClass="ArticleDetailViewController" customModule="qv1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ArticleDetail" id="jj0-Pj-JR3" customClass="ArticleDetailViewController" customModule="qv1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TyZ-BP-7HF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

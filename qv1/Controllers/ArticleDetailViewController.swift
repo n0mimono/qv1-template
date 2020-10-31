@@ -34,4 +34,8 @@ class ArticleDetailViewController: UIViewController {
             .drive(headerPositionConstraint.rx.constant)
             .disposed(by: disposeBag)
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
 }

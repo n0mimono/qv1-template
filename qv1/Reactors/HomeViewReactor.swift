@@ -58,8 +58,8 @@ final class HomeViewReactor: Reactor {
             }
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
-                service.api.request(ItemRequest(page: initialState.page), ItemsResponse.self)
-                    .compactMap { Mutation.setArticles($0.articles) },
+                service.api.request(Qiita.GetItems(page: initialState.page, perPage: 20))
+                    .compactMap { Mutation.setArticles($0) },
                 Observable.just(Mutation.setLoading(false))
             ])
         case .fetchArticlesAdditive:
@@ -68,8 +68,8 @@ final class HomeViewReactor: Reactor {
             }
             return Observable.concat([
                 Observable.just(Mutation.setLoading(true)),
-                service.api.request(ItemRequest(page: currentState.page), ItemsResponse.self)
-                    .compactMap { Mutation.addArticles($0.articles) },
+                service.api.request(Qiita.GetItems(page: currentState.page, perPage: 20))
+                    .compactMap { Mutation.setArticles($0) },
                 Observable.just(Mutation.setLoading(false))
             ])
         case let .selectItem(index):

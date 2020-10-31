@@ -11,6 +11,24 @@
         }
       },
       {
+        "package": "Moya",
+        "repositoryURL": "https://github.com/Moya/Moya",
+        "state": {
+          "branch": null,
+          "revision": "e5a28fb62dd5ff4e17b7025643366550044a40b0",
+          "version": null
+        }
+      },
+      {
+        "package": "ReactiveSwift",
+        "repositoryURL": "https://github.com/Moya/ReactiveSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "f195d82bb30e412e70446e2b4a77e1b514099e88",
+          "version": "6.1.0"
+        }
+      },
+      {
         "package": "ReactorKit",
         "repositoryURL": "https://github.com/dodgecm/ReactorKit",
         "state": {
@@ -26,6 +44,15 @@
           "branch": null,
           "revision": "c3a3bb3d46ee831582c6619ecc48cda1cdbff890",
           "version": "2.0.0"
+        }
+      },
+      {
+        "package": "RxGesture",
+        "repositoryURL": "https://github.com/RxSwiftCommunity/RxGesture",
+        "state": {
+          "branch": null,
+          "revision": "867f176b6695829e350fafc00b5a849bb46a1857",
+          "version": "3.0.3"
         }
       },
       {

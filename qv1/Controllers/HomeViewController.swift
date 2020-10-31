@@ -11,76 +11,36 @@ import ReactorKit
 import RxCocoa
 import RxSwift
 
-final class HomeViewController: UIViewController, StoryboardView {
+final class HomeViewController: UITabBarController, StoryboardView {
     typealias Reactor = HomeViewReactor
     var disposeBag = DisposeBag()
 
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var headerHeightConstraint: NSLayoutConstraint!
-
     override func viewDidLoad() {
-        super.viewDidLoad()
+        delegate = self
 
-        navigationController?.navigationBar.topItem?.title = "Home"
-
-        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
-        tableView.estimatedRowHeight = 150
-        tableView.rowHeight = UITableView.automaticDimension
-
-        let originHeaderHeight = headerHeightConstraint.constant
-        tableView.rx.contentOffset.asDriver()
-            .distinctUntilChanged()
-            .map { max(0, -$0.y) }
-            .drive(onNext: { [weak self] offset in
-                self?.headerHeightConstraint.constant = originHeaderHeight + offset
-
-                if offset > 200 {
-                    self?.headerView.backgroundColor = UIColor(ciColor: .red)
-                } else if offset > 100 {
-                    self?.headerView.backgroundColor = UIColor(ciColor: .green)
-                } else {
-                    self?.headerView.backgroundColor = UIColor(ciColor: .white)
-                }
-            })
-            .disposed(by: disposeBag)
+        guard let viewControllers = viewControllers else { return }
+        for viewController in viewControllers {
+            if let homeFirst = viewController as? HomeFirstViewController {
+                homeFirst.reactor = reactor
+            }
+        }
     }
 
-    func bind(reactor: Reactor) {
-        reactor.state.map { $0.articles }
-            .observeOn(MainScheduler.instance)
-            .bind(to: tableView.rx.items(cellIdentifier: "TableViewCell", cellType: TableViewCell.self)) { _, item, cell in
-                cell.setArticle(item)
-            }
-            .disposed(by: disposeBag)
+    func bind(reactor: HomeViewReactor) {}
 
-        reactor.relay.selectItem
-            .observeOn(MainScheduler.instance)
-            .bind { [weak self] article in
-                self?.push(name: "ArticleDetail", type: ArticleDetailViewController.self) { next in
-                    next.article = article
-                }
-            }
-            .disposed(by: disposeBag)
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {}
+}
 
-        tableView.rx.itemSelected
-            .map { Reactor.Action.selectItem($0.row) }
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+extension HomeViewController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        guard let fromView = selectedViewController?.view, let toView = viewController.view else {
+            return false
+        }
 
-        tableView.rx.contentOffset.asDriver()
-            .distinctUntilChanged()
-            .map {
-                let tableViewMaximumOffset = self.tableView.contentSize.height - self.tableView.frame.height
-                return Int(tableViewMaximumOffset - $0.y)
-            }
-            .filter { $0 < 500 }
-            .map { _ in Reactor.Action.fetchArticlesAdditive }
-            .drive(reactor.action)
-            .disposed(by: disposeBag)
+        if fromView != toView {
+            UIView.transition(from: fromView, to: toView, duration: 0.28, options: [.transitionCrossDissolve], completion: nil)
+        }
 
-        Observable.just(Reactor.Action.fetchArticles)
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
+        return true
     }
 }
